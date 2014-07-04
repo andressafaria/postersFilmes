@@ -18,10 +18,10 @@
 				<h3 class="sidetitl rounded">Filmes</h3>
     		</div>
 			<div class="fblock">		
-	    		<a href="categoria.php">-Categorias</a>
+	    		<a href="lst_categoria.php">-Categorias</a>
 			</div>
 			<div class="fblock">
-	    		<a href="subcategoria.php">-SubCategorias</a><br />
+	    		<a href="lst_subcategoria.php">-SubCategorias</a><br />
 			</div>
 			<div class="fblock">
 	    		<a href="filmes.php">-Filmes</a><br />
