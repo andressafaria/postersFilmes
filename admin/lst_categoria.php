@@ -3,9 +3,9 @@
 <?php  include '../conn.php';
 	   include 'cabecalho.php';
 	   
-	    /* quando for deletar, executa as linhas abaixo */
+	    /* quando for deletar, executa as linhas abaixo 
 		
-		$acao = $_GET['acao'];
+		$acao = $_POST["acao"];
 
 	if($acao == 'deleta') {
 
@@ -15,7 +15,7 @@
 
 		echo "<script>alert('Deletado com sucesso!');location.href='lst_categoria.php';</script>";
 
-	}
+	}*/
 	   
  ?>
        

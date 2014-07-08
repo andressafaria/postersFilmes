@@ -47,7 +47,7 @@
 		<div id="menu">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="usuarios.php">Administradores do Site</a></li>
+				<li><a href="lst_usuario.php">Administradores do Site</a></li>
 				<li><a href="#">Central de Ajuda</a></li>
 				<li><a href="sair.php">Sair</a></li>
 			</ul>

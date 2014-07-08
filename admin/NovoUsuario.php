@@ -1,20 +1,6 @@
 <?php require "../conn.php"; 
 	  include 'cabecalho.php';
-	  
-	//  $nome = $_POST['nome'];
-	  //$id_categoria =$_POST["id_categoria"];
-	  /*
-	  
-	  if(!empty($_POST['submit'])){
-	  	
-	  
-   			pg_query ("insert into subcategorias(id_categoria,subcategoria) values ('$id_categoria','$nome')");
-    		echo "<script>alert('Sub-Categoria cadastrada com sucesso!');location.href='lst_subcategoria.php';</script>";
-			 
-	
-	}*/
-	
-	  
+	  	  
  ?>
 	  
 
@@ -32,41 +18,23 @@
 <!--inicio div cover-->  <div class="cover">
  		
 	<table>
-		
-			<form method="post" action="NovaSubcategoriaAcao.php">
-			
+			<form method="post" action="NovoUsuarioAcao.php">
    		<tr>
-    		<td>Categoria:</td>
-			<td><select name="id_categoria">
-					<option>  
-					<?
-						$sql_cat = "select * from categorias order by categoria";
-						$result = mysql_query($sql_cat);
-						
-						while ($registro = mysql_fetch_array($result)){
-						
-							$valor = $registro["id_categoria"];
-							
-							if($id_categoria == $valor){
-								$selecionado ="selected";
-								
-							}else{
-							$selecionado = "";
-							
-							echo"<option value = \"$valor\" $selecionado > $registro[categoria] </option>";
-							}
-						} 
-					
-					?>
-                    </option>
-				</select>
-			</td>
-		</tr>	
-			<tr>
-    		<td>Sub-Categoria:</td>
+    		<td>Nome:</td>
 			<td><input type="text" name="nome" size="50" /></td>
     	</tr>
-    	</tr>
+		<tr>
+   						 <td>Email:</td>
+						 <td><input type="text" name="email" size="50"/></td>
+   					</tr>
+					<tr>
+   						 <td>Login:</td>
+						 <td><input type="text" name="login" size="50"/></td>
+   					</tr>
+					<tr>
+   						 <td>Senha:</td>
+						 <td><input type="text" name="senha" size="50"/></td>
+   					</tr>
    		<tr>
     		<td colspan="2" ><center> <input type="submit" name="submit" value="Cadastrar" align="left" />
       			<input name="reset" type="reset" value="Apagar" /></center>
@@ -76,7 +44,7 @@
  	</table>
  
 			
-			<a href="lst_categoria.php"> Voltar</a>			
+			<a href="usuarios.php"> Voltar</a>			
 			
 <!-- fim da div cover -->  </div>
 <!-- fim da div content--> </div>

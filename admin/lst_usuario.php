@@ -6,13 +6,13 @@
 	  
  /* quando for deletar, executa as linhas abaixo 
 
- if($_GET['acao']=="deleta") {
+ if($_GET["acao"]=="deleta") {
 
-$id = $_GET['id_subcategoria'];
+$id = $_GET['id_adm'];
 
- pg_query("DELETE FROM subcategorias WHERE id_subcategoria=".$id);
+ mysql_query("DELETE FROM administracao WHERE id_adm=".$id);
 
-echo "<script>alert('Sub- Seção deletada com sucesso!');location.href='lst_subcategoria.php';</script>";
+echo "<script>alert(' Deletado com sucesso!');location.href='usuarios.php';</script>";
 
 }*/
 
@@ -33,31 +33,43 @@ echo "<script>alert('Sub- Seção deletada com sucesso!');location.href='lst_subca
 <!--inicio div cover-->  <div class="cover">
   <table width="99%" border="0">
     <tr>
-      <td width="35%"><b>
-        <center>Categoria: </center></b>
-	  </td>
-      <td width="36%"><b>
-        <center> Sub-Categoria:</center></b>
-	  </td>
-      <td colspan="3">
-	  	<center> <b>A&ccedil;&atilde;o</b></center>
-	  </td>
-    </tr>
-	<tr>
-	<td colspan="2"></td>
-	<td colspan="3"><div align="center"><a href="NovaSubCategoria.php">Inserir nova Sub-Categoria</a> </div></td>
-      </tr>
+      <td width="17%"><b>
+        <center>Nome: </center></b>	  </td>
+      <td width="16%"><b>
+        <center> Email:</center></b>	  </td>
+      <td  width="18%">
+	  	<center> <b>Login</b></center>	  </td>
+	  <td  width="24%">
+	  	<center> <b>Senha:</b></center>	  </td>
+	  <td colspan="2">
+	  	<center> <b>A&ccedil;&atilde;o</b>
+	  	</center>
+	  	<center> 
+	  	  <b></b>
+	  	  </center></td>
+	  </tr>
+      <tr>
+	<td colspan="4"></td>
+	<td colspan="3"><div align="center"><a href="NovoUsuario.php">Novo Administrador </a> </div></td>
+     </tr>
+     
     <?php 
 			//query que seleciona a tabela de categorias e subcategorias
-			$sql = mysql_query("SELECT c.*, s.* from categorias c, subcategorias s where c.id_categoria = s.id_categoria order by c.categoria");
+			$sql = mysql_query("SELECT * from administracao");
 			
 			// laço feito para mostrar todos as categorias e subcategorias cadastradas
 			while($coluna = mysql_fetch_array($sql)){ ?>
+            
     <tr>
-      <td><?php echo $coluna["categoria"]; ?></td>
-	  <td><?php echo $coluna["subcategoria"]; ?> </td>
-      <td width="15%"><a href="AlterarSubCategoria.php?id_subcategoria= <?php echo $coluna["id_subcategoria"];?>">Editar</a></td>
-      <td width="14%"><a href="">Excluir</a></td>
+      <td><?php echo $coluna['nome'];?></td>
+	  <td><?php echo $coluna['email']; ?> </td>
+	  <td><?php echo $coluna['login']; ?> </td>
+	  <td><?php echo $coluna['senha']; ?> </td>
+	  
+	  
+	  
+      <td width="13%"><a href="lst_alterarUsuario.php?id_adm= <?php echo $coluna["id_adm"];?>">Editar</a></td>
+      <td width="12%"><a href="?acao=deleta&id_adm=<?php echo $coluna["id_adm"] ;?>">Excluir</a></td>
     </tr>
     <?php } ?>
     
