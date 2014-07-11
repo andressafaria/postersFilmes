@@ -1,20 +1,5 @@
 <?php require "../conn.php"; 
-	  include 'cabecalho.php';
-	  
-	//  $nome = $_POST['nome'];
-	  //$id_categoria =$_POST["id_categoria"];
-	  /*
-	  
-	  if(!empty($_POST['submit'])){
-	  	
-	  
-   			pg_query ("insert into subcategorias(id_categoria,subcategoria) values ('$id_categoria','$nome')");
-    		echo "<script>alert('Sub-Categoria cadastrada com sucesso!');location.href='lst_subcategoria.php';</script>";
-			 
-	
-	}*/
-	
-	  
+	  include 'cabecalho.php';	  
  ?>
 	  
 
@@ -33,14 +18,13 @@
  		
 	<table>
 		
-			<form method="post" action="NovaSubcategoriaAcao.php">
+			<form method="post" action="NovoFilmeAcao.php" enctype="multipart/form-data">
 			
    		<tr>
     		<td>Categoria:</td>
 			<td><select name="id_categoria">
 					<option>  </option>
-                    
-                    <?php
+					<?php
 						$sql_cat = "select * from categorias order by categoria";
 						$result = mysql_query($sql_cat);
 						
@@ -48,13 +32,13 @@
 						
 							$valor = $registro["id_categoria"];
 							
-							if($id_categoria == $valor){
+							if($id_cat == $valor){
 								$selecionado ="selected";
 								
 							}else{
 							$selecionado = "";
 							
-							echo"<option value = \"$valor\" $selecionado > $registro[categoria] </option>";
+							print"<option value =\"$valor\"$selecionado > $registro[categoria] </option>";
 							}
 						} 
 					
@@ -62,21 +46,56 @@
 				</select>
 			</td>
 		</tr>	
-			<tr>
+		<tr>
     		<td>Sub-Categoria:</td>
+			<td><select name="id_subcategoria">
+					<option>  </option>
+					<?php
+						$sql_cat = "select * from subcategorias order by subcategoria";
+						$result = mysql_query($sql_cat);
+						
+						while ($registro = mysql_fetch_array($result)){
+						
+							$valor = $registro["id_subcategoria"];
+							
+							if($id_cat == $valor){
+								$selecionado ="selected";
+								
+							}else{
+							$selecionado = "";
+							
+							print"<option value = \"$valor\" $selecionado > $registro[subcategoria] </option>";
+							}
+						} 
+					
+					?>
+				</select>
+			</td>
+		</tr>	
+		
+			<tr>
+    		<td>Filme:</td>
 			<td><input type="text" name="nome" size="50" /></td>
     	</tr>
     	</tr>
-   		<tr>
+   		
+		<tr><td>Imagem:</td>
+		<td><input name="foto" type="file" size="50" /></td>
+		</tr>
+		<tr><td>Descrição:</td>
+		<td><textarea cols="35" rows="5" name="descricao" id="descricao" /></textarea> </td>
+		</tr>
+		<tr>
     		<td colspan="2" ><center> <input type="submit" name="submit" value="Cadastrar" align="left" />
       			<input name="reset" type="reset" value="Apagar" /></center>
 	    	</td>
   		</tr>
+		
   			</form>
  	</table>
  
 			
-			<a href="lst_categoria.php"> Voltar</a>			
+			<a href="lst_filmes.php"> Voltar</a>			
 			
 <!-- fim da div cover -->  </div>
 <!-- fim da div content--> </div>

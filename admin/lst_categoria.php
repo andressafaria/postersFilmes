@@ -1,22 +1,7 @@
  <!-- esta pagina mostra o resultado das categorias cadastradas no banco e 
  aprensenta as opções de editar, excluir e adicionar uma nova categoria -->
 <?php  include '../conn.php';
-	   include 'cabecalho.php';
-	   
-	    /* quando for deletar, executa as linhas abaixo 
-		
-		$acao = $_POST["acao"];
-
-	if($acao == 'deleta') {
-
-		$id = $_GET['id_categoria'];
-
- 		mysql_query("DELETE FROM categorias WHERE id_categoria=".$id);
-
-		echo "<script>alert('Deletado com sucesso!');location.href='lst_categoria.php';</script>";
-
-	}*/
-	   
+	   include 'cabecalho.php';	   
  ?>
        
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -51,7 +36,7 @@
 		 <tr>
    				<td><?php echo $coluna['categoria']; ?></td>
     			<td width="12%"><a href="lst_alterarCategoria.php?id_categoria= <?php echo $coluna["id_categoria"];?>">Editar</a></td>
-    			<td width="15%"><a href="?acao=deleta&id_categoria=<?php echo $coluna["id_categoria"] ;?>">Excluir</a></td>
+    			<td width="15%"><a href="deleta_categoria.php?id_categoria=<?php echo $coluna["id_categoria"] ;?>">Excluir</a></td>
         </tr>
   		<?php  } ?>
  

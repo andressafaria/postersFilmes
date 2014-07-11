@@ -56,8 +56,8 @@ echo "<script>alert('Sub- Seção deletada com sucesso!');location.href='lst_subca
     <tr>
       <td><?php echo $coluna["categoria"]; ?></td>
 	  <td><?php echo $coluna["subcategoria"]; ?> </td>
-      <td width="15%"><a href="AlterarSubCategoria.php?id_subcategoria= <?php echo $coluna["id_subcategoria"];?>">Editar</a></td>
-      <td width="14%"><a href="">Excluir</a></td>
+      <td width="15%"><a href="lst_alterarSubCategoria.php?id_subcategoria= <?php echo $coluna["id_subcategoria"];?>">Editar</a></td>
+      <td width="14%"><a href="deleta_subcategoria.php?id_subcategoria=<?php echo $coluna["id_subcategoria"];?>">Excluir</a></td>
     </tr>
     <?php } ?>
     

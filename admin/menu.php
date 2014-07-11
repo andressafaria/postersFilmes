@@ -15,7 +15,7 @@
         <div class="featlist ">
 		 
 			<div class="fblock">		
-				<h3 class="sidetitl rounded">Filmes</h3>
+				<h3 class="sidetitl rounded">Cadastrar</h3>
     		</div>
 			<div class="fblock">		
 	    		<a href="lst_categoria.php">-Categorias</a>
@@ -24,7 +24,7 @@
 	    		<a href="lst_subcategoria.php">-SubCategorias</a><br />
 			</div>
 			<div class="fblock">
-	    		<a href="filmes.php">-Filmes</a><br />
+	    		<a href="lst_filmes.php">-Filmes</a><br />
 			</div>
 							
 <!-- fim da div fblock-->  		  
